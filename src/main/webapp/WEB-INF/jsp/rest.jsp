@@ -28,6 +28,22 @@
          </form>
     </div>
 
+    <div class="FindUserBlock">
+               <div class="form">
+                 <form method="post" action="rest_find_by_id">
+                   <fieldset class="account-info">
+                     <legend>Поиск/Удаление пользователя</legend>
+                     <label>
+                       id пользователя
+                     </span><input type="number" name="id" placeholder="Введите id записи">
+                   </label>
+                 </fieldset>
+                 <fieldset class="account-action">
+                     <button type="submit" class="submit" >Поиск</button>
+                     <button type="submit" class="submit" formaction="rest_del_user">Удалить</button>
+                 </fieldset>
+               </form>
+    </div>
 
     <div class="form">
          <form method="post" action="restDelDepartment">

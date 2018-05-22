@@ -25,16 +25,14 @@ public class MainController {
         return "home";
     }
 
-    @GetMapping("main")
-    public String mainRedirect(Model model) {
-        showContent(model);
+    @GetMapping("general")
+    public String mainRedirect() {
         return "main";
     }
 
     @GetMapping("google")
-    public String google(Model model){
-        showContent(model);
-        return "main";
+    public String google(){
+        return "redirect:/general";
     }
 
     @GetMapping("rest")
@@ -44,7 +42,6 @@ public class MainController {
 
     @GetMapping("goToMain")
     public String goToMainPage(Model model){
-        showContent(model);
         return "main";
     }
 
@@ -68,7 +65,6 @@ public class MainController {
             userRepo.save(userEntity);
         }
 
-        showContent(model);
         return "main";
     }
 
@@ -78,42 +74,36 @@ public class MainController {
                                 Model model){
         depRepo.save(new DepartmentEntity(depName, description));
 
-        showContent(model);
         return "main";
     }
 
-    @PostMapping("find_by_id")
-    public String filter(@RequestParam Integer id, Model model) {
-        Iterable<UserEntity> users;
+//    @PostMapping("find_user_by_id")
+//    public String filter(@RequestParam Integer id) {
+//        Iterable<UserEntity> users;
+//
+//        if (id != null) {
+//            users = userRepo.findById(id);
+//        } else {
+//            users = userRepo.findAll();
+//        }
+//
+//        return "main";
+//    }
 
-        if (id != null) {
-            users = userRepo.findById(id);
-        } else {
-            users = userRepo.findAll();
-        }
-
-        model.addAttribute("users", users);
-
-        Iterable<DepartmentEntity> departments = depRepo.findAll();
-        model.addAttribute("departments", departments);
-        return "main";
-    }
-
-    @PostMapping("del")
-    public String delete(@RequestParam Integer id, Model model){
-        Iterable<UserEntity> users;
-        String idToString = id.toString();
-
-        if(id != null){
-            users = userRepo.findById(id);
-            for (UserEntity u: users) {
-                userRepo.delete(u);
-            }
-        }
-
-        showContent(model);
-        return "main";
-    }
+//    @PostMapping("del")
+//    public String delete(@RequestParam Integer id, Model model){
+//        Iterable<UserEntity> users;
+//        String idToString = id.toString();
+//
+//        if(id != null){
+//            users = userRepo.findById(id);
+//            for (UserEntity u: users) {
+//                userRepo.delete(u);
+//            }
+//        }
+//
+//        return "main";
+//    }
 
         @PostMapping("delDepartment")
         public String delDepartment(@RequestParam Integer id, Model model){
@@ -127,8 +117,6 @@ public class MainController {
                 depRepo.delete(d);
             }
 
-
-            showContent(model);
             return "main";
         }
 
@@ -146,8 +134,6 @@ public class MainController {
             }
             break;
         }
-
-        showContent(model);
         return "main";
     }
 
@@ -158,17 +144,7 @@ public class MainController {
         Iterable<UserEntity> users = userRepo.findByDepartment(nameDep);
         model.addAttribute("users", users);
 
-        Iterable<DepartmentEntity> departments = depRepo.findAll();
-        model.addAttribute("departments", departments);
-
         return "main";
-    }
-
-    public void showContent(Model model){
-        Iterable<DepartmentEntity> departments = depRepo.findAll();
-        Iterable<UserEntity> users = userRepo.findAll();
-        model.addAttribute("users", users);
-        model.addAttribute("departments", departments);
     }
 
 

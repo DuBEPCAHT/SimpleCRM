@@ -8,6 +8,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"\>
         <title>Welcome</title>
         <link rel="stylesheet" href="css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/main.js"></script>
    </head>
    <body>
    <div align="right">
@@ -47,17 +49,16 @@
 
          <div class="FindUserBlock">
            <div class="form">
-             <form method="post" action="find_by_id">
+             <form>
                <fieldset class="account-info">
-                 <legend>Поиск/Удаление пользователя</legend>
+                 <legend>Поиск пользователя</legend>
                  <label>
                    id пользователя
-                 </span><input type="number" name="id" placeholder="Введите id записи">
+                 </span><input type="number" name="id" id="id_field_find_user" placeholder="Введите id записи">
                </label>
              </fieldset>
              <fieldset class="account-action">
-                 <button type="submit" class="submit">Поиск</button>
-                 <button type="submit" class="submit" formaction="del">Удалить</button>
+                 <button type="button" class="submit" id="find_user_by_id_rest">Поиск</button>
              </fieldset>
            </form>
          </div>
@@ -88,18 +89,13 @@
              <th>Отчество</th>
              <th>Дата рождения</th>
              <th>Департамент</th>
+             <th></th>
            </tr>
-           <c:forEach items="${users}" var ="users">
-           <tr>
-             <td>${users.id}</td>
-             <td>${users.firstName}</td>
-             <td>${users.lastName}</td>
-             <td>${users.middleName}</td>
-             <td>${users.date}</td>
-             <td>${users.departmentId}</td>
-           </tr>
-         </c:forEach>
+
        </table>
+       <div align="center">
+       <button type="button" class="submit" id="find_all_users_rest">Показать всех пользователей</button>
+       </div>
      </div>
    </div>
 
@@ -131,7 +127,7 @@
          <legend class="dep1">Удалить департамент</legend>
          <label>
            id департамента
-           <input type="number" name="id" placeholder="id департамента">
+           <input type="number" name="id" id="id_field_department" placeholder="id департамента">
          </label>
        </fieldset>
        <fieldset class="account-action">
@@ -165,15 +161,12 @@
            <th>id</th>
            <th>Название</th>
            <th>Описание</th>
+           <th></th>
          </tr>
-         <c:forEach  items="${departments}" var ="departments">
-         <tr class="dep4">
-           <td>${departments.id}</td>
-           <td>${departments.depName}</td>
-           <td>${departments.description}</td>
-         </tr>
-       </c:forEach>
      </table>
+        <div align="center">
+               <button type="button" class="submit" id="find_all_department_rest">Показать все департаменты</button>
+        </div>
        </div>
 
    </div>

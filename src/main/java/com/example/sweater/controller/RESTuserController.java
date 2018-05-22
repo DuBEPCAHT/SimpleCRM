@@ -55,4 +55,26 @@ public class RESTuserController {
         depRepo.save(dep);
         return dep;
     }
+
+    @RequestMapping(value="rest_find_user_by_id", method = RequestMethod.POST)
+    public Iterable<UserEntity> filter(@RequestParam Integer id) {
+        Iterable<UserEntity> users = userRepo.findById(id);
+        return users;
+    }
+
+    @RequestMapping(value = "rest_del_user", method = RequestMethod.POST)
+    public Iterable<UserEntity> delete(@RequestParam Integer id){
+        Iterable<UserEntity> users;
+
+        if(id != null){
+            users = userRepo.findById(id);
+            for (UserEntity u: users) {
+                userRepo.delete(u);
+            }
+        } else {
+            users = null;
+        }
+
+        return users;
+    }
 }

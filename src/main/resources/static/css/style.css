@@ -213,4 +213,12 @@ h1.restTitle {
     color: white;
 }
 
+button.iconDel{
+    background: url(https://png.icons8.com/metro/1600/delete.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border: 0;
+}
+
 
