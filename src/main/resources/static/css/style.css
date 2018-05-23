@@ -221,4 +221,13 @@ button.iconDel{
     border: 0;
 }
 
+button#find_all_department_rest, button#find_all_users_rest{
+    background: url(https://api.icons8.com/download/2e9517e9269f5e5d365c62cf0f44f6ff0c1ca519/Android_L/PNG/512/Very_Basic/search-512.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 25px;
+    height: 25px;
+    border: 0;
+    padding-left: 30px;
+}
+
 

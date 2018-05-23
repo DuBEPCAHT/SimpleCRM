@@ -24,7 +24,7 @@
        <div class="mainUserBlock">
          <div class="AddUserBlock">
            <div class="form" id="form1">
-             <form method="post" action="addUser">
+             <form>
                <fieldset class="account-info">
                  <legend>Добавить пользователя</legend>
                  <label>
@@ -41,7 +41,7 @@
                  </label>
                </fieldset>
                <fieldset class="account-action">
-                   <button type="submit" class="submit" id="button1">Добавить</button>
+                   <button type="button" class="submit" id="button1">Добавить</button>
                </fieldset>
              </form>
            </div>
@@ -64,7 +64,7 @@
          </div>
 
          <div class="form">
-                      <form method="post" action="find_by_department">
+                      <form>
                         <fieldset class="account-info">
                           <legend>Поиск по департаменту</legend>
                           <label>
@@ -73,7 +73,7 @@
                         </label>
                       </fieldset>
                       <fieldset class="account-action">
-                          <button type="submit" class="submit">Найти</button>
+                          <button type="button" class="submit" id="button_find_user_by_department">Найти</button>
                       </fieldset>
                     </form>
                   </div>
@@ -81,7 +81,7 @@
 
        <div class="UserTableMain">
          <table class="table" id="table3">
-           <caption>Список пользователей</caption>
+           <caption>Список пользователей<button type="button"  id="find_all_users_rest"/></caption>
            <tr>
              <th>id</th>
              <th>Имя</th>
@@ -93,9 +93,6 @@
            </tr>
 
        </table>
-       <div align="center">
-       <button type="button" class="submit" id="find_all_users_rest">Показать всех пользователей</button>
-       </div>
      </div>
    </div>
 
@@ -104,7 +101,7 @@
    <div class="departmentMain">
 
    <div class="form">
-     <form method="post" action="addDepartment">
+     <form>
        <fieldset class="account-info" id="dep3">
          <legend class="dep1">Добавить департамент</legend>
          <label>
@@ -115,29 +112,13 @@
          </label>
        </fieldset>
        <fieldset class="account-action">
-           <button type="submit" class="submit">Добавить</button>
+           <button type="button" class="submit" id="button_add_department">Добавить</button>
        </fieldset>
      </form>
    </div>
 
    <div class="form">
-     <form method="post" action="delDepartment">
-
-       <fieldset class="account-info" id="dep3">
-         <legend class="dep1">Удалить департамент</legend>
-         <label>
-           id департамента
-           <input type="number" name="id" id="id_field_department" placeholder="id департамента">
-         </label>
-       </fieldset>
-       <fieldset class="account-action">
-           <button type="submit" class="submit">Удалить</button>
-       </fieldset>
-     </form>
-   </div>
-
-   <div class="form">
-             <form method="post" action="setDepartmentForUser">
+             <form>
                <fieldset class="account-info" id="dep3">
                  <legend class="dep1">Добавить департамент пользователю</legend>
                  <label>
@@ -148,7 +129,7 @@
                  </label>
                </fieldset>
                <fieldset class="account-action">
-                   <button type="submit" class="submit">Добавить</button>
+                   <button type="button" class="submit" id="button_department_for_user">Добавить</button>
                </fieldset>
              </form>
         </div>
@@ -156,7 +137,7 @@
      <div class="departmentTable">
 
        <table class="table" id="table2">
-         <caption class="dep2">Департаменты</caption>
+         <caption class="dep2">Департаменты<button type="button"  id="find_all_department_rest"/></caption>
          <tr class="dep4">
            <th>id</th>
            <th>Название</th>
@@ -164,9 +145,6 @@
            <th></th>
          </tr>
      </table>
-        <div align="center">
-               <button type="button" class="submit" id="find_all_department_rest">Показать все департаменты</button>
-        </div>
        </div>
 
    </div>

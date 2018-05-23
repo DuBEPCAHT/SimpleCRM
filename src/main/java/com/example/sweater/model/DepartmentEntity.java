@@ -1,7 +1,6 @@
-package com.example.sweater.domain;
+package com.example.sweater.model;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Table(name = "departments")

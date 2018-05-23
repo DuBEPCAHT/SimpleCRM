@@ -1,7 +1,7 @@
 package com.example.sweater.repos;
 
-import com.example.sweater.domain.DepartmentEntity;
-import com.example.sweater.domain.UserEntity;
+import com.example.sweater.model.DepartmentEntity;
+import com.example.sweater.model.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;

@@ -1,7 +1,7 @@
-package com.example.sweater.controller;
+package com.example.sweater.controller.REST;
 
-import com.example.sweater.domain.DepartmentEntity;
-import com.example.sweater.domain.UserEntity;
+import com.example.sweater.model.DepartmentEntity;
+import com.example.sweater.model.UserEntity;
 import com.example.sweater.repos.DepRepo;
 import com.example.sweater.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,25 +14,19 @@ import java.util.List;
 
 
 @RestController
-public class RESTuserController {
+public class RESTdepartmentController {
     @Autowired
     UserRepo userRepo;
 
     @Autowired
     DepRepo depRepo;
 
-    @RequestMapping(value = "restAllUsers", method = RequestMethod.GET)
-    public List<UserEntity> restAllUsers(){
-        List<UserEntity> users = userRepo.findAll();
-        int x = users.size();
-        return users;
-    }
-
     @RequestMapping(value = "restAllDepartments", method = RequestMethod.GET)
     public Iterable<DepartmentEntity> restAddDepartments(){
         Iterable<DepartmentEntity> departments = depRepo.findAll();
         return departments;
     }
+
 
     @RequestMapping(value = "restDelDepartment", method = RequestMethod.POST)
     public DepartmentEntity delDepartment(@RequestParam Integer id){
@@ -50,31 +44,26 @@ public class RESTuserController {
 
     @RequestMapping(value = "restAddDepartment", method = RequestMethod.POST)
     public DepartmentEntity addDepartment(@RequestParam String depName,
-                                @RequestParam String description){
+                                          @RequestParam String description){
         DepartmentEntity dep = new DepartmentEntity(depName, description);
         depRepo.save(dep);
         return dep;
     }
 
-    @RequestMapping(value="rest_find_user_by_id", method = RequestMethod.POST)
-    public Iterable<UserEntity> filter(@RequestParam Integer id) {
-        Iterable<UserEntity> users = userRepo.findById(id);
-        return users;
-    }
-
-    @RequestMapping(value = "rest_del_user", method = RequestMethod.POST)
-    public Iterable<UserEntity> delete(@RequestParam Integer id){
-        Iterable<UserEntity> users;
-
-        if(id != null){
-            users = userRepo.findById(id);
-            for (UserEntity u: users) {
-                userRepo.delete(u);
+    @RequestMapping(value = "restSetDepartmentForUser", method = RequestMethod.POST)
+    public Iterable<UserEntity> setDepartmentForUser(@RequestParam Integer idUser,
+                                                     @RequestParam Integer idDep){
+        Iterable<UserEntity> users = userRepo.findById(idUser);
+        Iterable<DepartmentEntity> dep = depRepo.findById(idDep);
+        for(UserEntity u: users){
+            for (DepartmentEntity d: dep){
+                u.setCodeDepartment(d);
+                userRepo.save(u);
+                break;
             }
-        } else {
-            users = null;
+            break;
         }
-
         return users;
     }
+
 }
