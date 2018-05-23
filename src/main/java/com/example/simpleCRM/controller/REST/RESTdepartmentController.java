@@ -1,9 +1,9 @@
-package com.example.sweater.controller.REST;
+package com.example.simpleCRM.controller.REST;
 
-import com.example.sweater.model.DepartmentEntity;
-import com.example.sweater.model.UserEntity;
-import com.example.sweater.repos.DepRepo;
-import com.example.sweater.repos.UserRepo;
+import com.example.simpleCRM.model.DepartmentEntity;
+import com.example.simpleCRM.model.UserEntity;
+import com.example.simpleCRM.repos.DepRepo;
+import com.example.simpleCRM.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

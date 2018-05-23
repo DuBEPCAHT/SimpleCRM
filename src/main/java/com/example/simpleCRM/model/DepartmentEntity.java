@@ -1,4 +1,4 @@
-package com.example.sweater.model;
+package com.example.simpleCRM.model;
 
 import javax.persistence.*;
 

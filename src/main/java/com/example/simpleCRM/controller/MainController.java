@@ -1,7 +1,7 @@
-package com.example.sweater.controller;
+package com.example.simpleCRM.controller;
 
-import com.example.sweater.repos.DepRepo;
-import com.example.sweater.repos.UserRepo;
+import com.example.simpleCRM.repos.DepRepo;
+import com.example.simpleCRM.repos.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;

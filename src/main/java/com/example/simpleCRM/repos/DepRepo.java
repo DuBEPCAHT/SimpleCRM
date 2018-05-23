@@ -1,6 +1,6 @@
-package com.example.sweater.repos;
+package com.example.simpleCRM.repos;
 
-import com.example.sweater.model.DepartmentEntity;
+import com.example.simpleCRM.model.DepartmentEntity;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
