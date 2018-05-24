@@ -22,12 +22,11 @@ public class UserEntity {
     @NotEmpty
     @Size(min=2, max=30)
     private String middleName;
-    @NotNull
+
     @NotEmpty
-    @Past
+    @NotNull
     private String date;
 
-    @Positive
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "departments_id")
     private DepartmentEntity codeDepartment;

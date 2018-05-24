@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//REST контроллер для
+//REST контроллер для User
 
 @RestController
 public class RESTuserController {

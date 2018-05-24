@@ -9,6 +9,8 @@ import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
+//CRUD + доп запросы для User
+
 public interface UserRepo extends CrudRepository<UserEntity, Long>, JpaRepository<UserEntity, Long> {
     List<UserEntity> findById(Integer id);
 

@@ -5,6 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
+//CRUD + доп запросы для Department
+
 public interface DepRepo extends CrudRepository<DepartmentEntity, Long> {
     List<DepartmentEntity> findById(Integer id);
 }

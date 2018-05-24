@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="css/style.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script src="js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.debug.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/2.3.3/jspdf.plugin.autotable.js"></script>
    </head>
    <body>
    <div align="right">
@@ -81,7 +84,10 @@
 
        <div class="UserTableMain">
          <table class="table" id="table3">
-           <caption>Список пользователей<button type="button"  id="find_all_users_rest"/></caption>
+           <caption>Список пользователей
+            <button type="button" id="find_all_users_rest"/>
+            <button type="button" id="saveUserPDF"/>
+           </caption>
            <tr>
              <th>id</th>
              <th>Имя</th>
@@ -137,7 +143,11 @@
      <div class="departmentTable">
 
        <table class="table" id="table2">
-         <caption class="dep2">Департаменты<button type="button"  id="find_all_department_rest"/></caption>
+         <caption class="dep2">
+         Департаменты
+         <button type="button"  id="find_all_department_rest"/>
+         <button type="button" id="saveDepartmentPDF"/>
+         </caption>
          <tr class="dep4">
            <th>id</th>
            <th>Название</th>

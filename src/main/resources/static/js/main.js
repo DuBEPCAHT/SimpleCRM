@@ -3,6 +3,8 @@
 ///////////////////////////////////////
 /////////   UTIL FUNCTION    /////////
 /////////////////////////////////////
+
+//Генерирует таблицу со всеми User
 function showAllUsers() {
         $.ajax({
                       url: "http://localhost:8090/restAllUsers",
@@ -24,6 +26,7 @@ function showAllUsers() {
                   }
             );
     };
+//Генерирует таблицу со всеми Department
 function showAllDepartments() {
         $.ajax({
                    url: "http://localhost:8090/restAllDepartments",
@@ -42,7 +45,6 @@ function showAllDepartments() {
                  }
             );
     };
-
 //Удаляет User по id
 function del_by_id(user_id){
 var textId = $('#id_field_find_user').val();
@@ -69,6 +71,41 @@ var textId = $('#id_field_department').val();
                 );
     }
 
+function saveUserPDF(){
+    $.ajax({
+                      url: "http://localhost:8090/restAllUsers",
+                      }).then (function(data){
+                         var objs = data;
+                         var columns = ["ID", "First Name", "Last Name", "Middle Name", "Date", "Department ID"];
+                         var rows = [];
+                         for(var i= 0; i < objs.length; i++){
+                            rows[i] = [objs[i].id, objs[i].firstName, objs[i].lastName, objs[i].middleName, objs[i].date, objs[i].departmentId];
+                         }
+                         var doc = new jsPDF('p', 'pt');
+                         doc.autoTable(columns, rows);
+                         doc.save('user_table.pdf');
+                  }
+            );
+}
+function saveDepartmentPDF(){
+    $.ajax({
+                      url: "http://localhost:8090/restAllDepartments",
+                      }).then (function(data){
+                         var objs = data;
+                         var columns = ["ID", "Name", "Description"];
+                         var rows = [];
+                         for(var i= 0; i < objs.length; i++){
+                            rows[i] = [objs[i].id, objs[i].depName, objs[i].description];
+                         }
+                         var doc = new jsPDF('p', 'pt');
+                         doc.autoTable(columns, rows);
+                         doc.save('department_table.pdf');
+                  }
+            );
+}
+
+
+///////// EVENTS ////////
 $(document).ready(function() {
     showAllUsers();
     showAllDepartments();
@@ -162,6 +199,12 @@ $(document).ready(function() {
                        );
                });
 
+    //Скачать PDF таблицу пользователей
+    $('#saveUserPDF').click(function () {
+        saveUserPDF();
+    });
+
+
 ///////////////////////////////////
 /////////   DEPARTMENTS  /////////
 /////////////////////////////////
@@ -198,6 +241,11 @@ $(document).ready(function() {
                          }
                   );
           });
+
+    //Скачать PDF таблицу департаментов
+    $('#saveDepartmentPDF').click(function () {
+        saveDepartmentPDF();
+    });
 
 });
 

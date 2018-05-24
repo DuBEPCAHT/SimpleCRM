@@ -18,7 +18,6 @@ h1 {
     font-family: monospace;
 }
 
-
 .effect7
 {
     background-color: honeydew;
