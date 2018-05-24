@@ -1,6 +1,9 @@
 package com.example.simpleCRM.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "departments")
@@ -9,10 +12,15 @@ public class DepartmentEntity {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
+    @NotNull
+    @NotEmpty
+    @Column(unique = true)
     private String depName;
+
+    @NotNull
+    @NotEmpty
+    @Size(max=200)
     private String description;
-
-
 
 
     public DepartmentEntity() {

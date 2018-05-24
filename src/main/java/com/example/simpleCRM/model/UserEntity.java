@@ -1,6 +1,7 @@
 package com.example.simpleCRM.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "users")
@@ -9,11 +10,24 @@ public class UserEntity {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
+    @NotEmpty
+    @NotNull
+    @Size(min=2, max=30)
     private String firstName;
+    @NotNull
+    @NotEmpty
+    @Size(min=2, max=30)
     private String lastName;
+    @NotNull
+    @NotEmpty
+    @Size(min=2, max=30)
     private String middleName;
+    @NotNull
+    @NotEmpty
+    @Past
     private String date;
 
+    @Positive
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "departments_id")
     private DepartmentEntity codeDepartment;
