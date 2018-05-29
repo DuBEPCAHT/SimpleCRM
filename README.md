@@ -17,7 +17,7 @@ Server: Tomcat;
 
 Service: RESTfull;
 
-Assembly system: Maven;
+Building system: Maven;
 
 
 
