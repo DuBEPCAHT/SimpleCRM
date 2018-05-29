@@ -28,7 +28,6 @@ public class RESTdepartmentController {
         return departments;
     }
 
-
     @RequestMapping(value = "restDelDepartment", method = RequestMethod.POST)
     public DepartmentEntity delDepartment(@RequestParam Integer id){
         Iterable<DepartmentEntity> departments = depRepo.findById(id);

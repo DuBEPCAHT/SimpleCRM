@@ -237,6 +237,15 @@ $(document).ready(function() {
                                                           "<td>" + objs[i].date + "</td>" +
                                                           "<td>" + objs[i].departmentId + "</td>" +
                                                            "<td><div align='center'><button class='iconDel' type='button' title='Удалить' onclick='del_by_id(" + objs[i].id + ")'/></div></td>" +
+                                                           "<td>"+
+                                                           "<div align='center'><button class='iconUpd' type='button' title='Обновить пользователя' onclick='upd_by_id_user(" + objs[i].id + ","
+                                                                                                                                                + "\"" + objs[i].firstName + "\""  + ","
+                                                                                                                                                + "\"" + objs[i].lastName  + "\"" + ","
+                                                                                                                                                + "\"" + objs[i].middleName  + "\"" + ","
+                                                                                                                                                + "\"" + objs[i].date  + "\"" + ","
+                                                                                                                                                + "\"" + objs[i].departmentId  + "\"" + ","
+                                                                                                                                                + (i) + ")'/></div>" +
+                                                           "</td>" +
                                                    "</tr>");
                            }
                     }
@@ -292,6 +301,15 @@ $(document).ready(function() {
                                                           "<td>" + objs[i].date + "</td>" +
                                                           "<td>" + objs[i].departmentId + "</td>" +
                                                            "<td><div align='center'><button class='iconDel' type='button' title='Удалить' onclick='del_by_id(" + objs[i].id + ")'/></div></td>" +
+                                                           "<td>"+
+                                                           "<div align='center'><button class='iconUpd' type='button' title='Обновить пользователя' onclick='upd_by_id_user(" + objs[i].id + ","
+                                                                                                                                                + "\"" + objs[i].firstName + "\""  + ","
+                                                                                                                                                + "\"" + objs[i].lastName  + "\"" + ","
+                                                                                                                                                + "\"" + objs[i].middleName  + "\"" + ","
+                                                                                                                                                + "\"" + objs[i].date  + "\"" + ","
+                                                                                                                                                + "\"" + objs[i].departmentId  + "\"" + ","
+                                                                                                                                                + (i) + ")'/></div>" +
+                                                           "</td>" +
                                                    "</tr>");
                                     }
                               }
