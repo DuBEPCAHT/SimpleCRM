@@ -67,4 +67,21 @@ public class RESTdepartmentController {
         return users;
     }
 
+    @RequestMapping(value = "restUpdateDep", method = RequestMethod.POST)
+    public DepartmentEntity updateDep(@RequestParam String id,
+                                      @RequestParam String depName,
+                                      @RequestParam String depDescription){
+        List<DepartmentEntity> deps = depRepo.findById(Integer.parseInt(id));
+        if(!deps.isEmpty()){
+            DepartmentEntity dep;
+            dep = deps.get(0);
+            dep.setDepName(depName);
+            dep.setDescription(depDescription);
+            depRepo.save(dep);
+            return dep;
+        } else {
+            return null;
+        }
+    }
+
 }

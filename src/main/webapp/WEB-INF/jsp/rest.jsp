@@ -8,6 +8,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"\>
         <title>Welcome</title>
         <link rel="stylesheet" href="css/style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
    </head>
    <body>
    <h1 class="restTitle" align="center">[RESTfull Service]</h1>
@@ -44,6 +47,32 @@
                    </fieldset>
                    <fieldset class="account-action">
                        <button type="button" class="submit" id="button1">Добавить</button>
+                   </fieldset>
+                 </form>
+               </div>
+
+    <div class="AddUserBlock">
+               <div class="form" id="form1">
+                 <form method="post" action="rest_update_user">
+                   <fieldset class="account-info">
+                     <legend>Обновить пользователя</legend>
+                     <label class="updateUserLabel">
+                       id
+                       <input type="number" name="id" placeholder="Введите id" required/>
+                       Имя
+                       <input type="text" name="firstName" placeholder="Введите имя" required/>
+                       Фамилия
+                       <input type="text" name="lastName" placeholder="Введите фамилию" required/>
+                       Отчество
+                       <input type="text" name="middleName" placeholder="Введите отчество"/>
+                       Дата рождения
+                       <input type="date" name="date" placeholder="Введите дату рождения" required/>
+                       Номер департамента
+                       <input type="number" name="codeDepartment" placeholder="Введите код департамента"/>
+                     </label>
+                   </fieldset>
+                   <fieldset class="account-action">
+                       <button type="button" class="submit" id="button_update_user">Обновить</button>
                    </fieldset>
                  </form>
                </div>

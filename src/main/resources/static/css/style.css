@@ -7,7 +7,7 @@ body {
 }
 
 input {
-	width: 300px;
+	width: 100%;
 	font-size: 13px;
 	padding: 6px 0 4px 10px;
 	border: 1px solid #cecece;
@@ -215,6 +215,30 @@ h1.restTitle {
 
 button.iconDel{
     background: url(https://png.icons8.com/metro/1600/delete.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border: 0;
+}
+
+button.iconUpd {
+    background: url(https://pngicon.ru/file/uploads/1_2699.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border: 0;
+}
+
+button.yesUpdateDep{
+    background: url(http://s1.iconbird.com/ico/0612/MustHave/w256h2561339195649Check256x256.png) 50% 50% no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    border: 0;
+}
+
+button.noUpdateDep{
+    background: url(http://s1.iconbird.com/ico/0612/vistabasesoftwareicons/w256h2561339252558DeleteRed.png) 50% 50% no-repeat;
     background-size: contain;
     width: 20px;
     height: 20px;
