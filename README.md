@@ -1,13 +1,19 @@
 # SimpleCRM
+***
+Technology stack
+***
+Spring: Spring Core, Spring MVC, Spring Boot, Spring Security, Spring SSO, Spring Data;
 
-Spring Core,
-Spring MVC,
-Spring Boot,
-Spring Security,
-SpringSSO,
-Spring Data,
-RESTfull,
-PostgreSQL,
-Tomcat,
-Maven.
+Additional: JSP, JS, HTML, CSS, AJAX;
+
+DataBase: PostgreSQL;
+
+Server: Tomcat;
+
+Service: RESTfull;
+
+Assembly system: Maven;
+
+
+
 
