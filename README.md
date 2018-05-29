@@ -1,8 +1,10 @@
 # SimpleCRM
 ***
-Technology stack
+Application for managing users and departments. Realized REST service, CRUD, SSO (Google).
+The Postgre database is required to run.
+After starting the application go to the link - http://localhost:8090
 ***
-Spring: Spring Core, Spring MVC, Spring Boot, Spring Security, Spring SSO, Spring Data;
+Spring: Core, MVC, Boot, Security, SSO, Data;
 
 Additional: JSP, JS (JQuery), HTML, CSS, AJAX;
 
