@@ -1,4 +1,4 @@
-# SimpleCRM
+                                                # SimpleCRM
 ***
 Application for managing users and departments. Realized REST service, CRUD, SSO (Google).
 The Postgre database is required to run.
@@ -20,8 +20,7 @@ Service: RESTfull;
 Building system: Maven;
 
 ***
-Project screen
-***
+                                               Project screen
 
 ![Image alt](https://github.com/DuBEPCAHT/SimpleCRM/blob/master/screen.png)
 
