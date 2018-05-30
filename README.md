@@ -19,6 +19,10 @@ Service: RESTfull;
 
 Building system: Maven;
 
+***
+Project screen
+***
 
+![Image alt](https://github.com/DuBEPCAHT/SimpleCRM/blob/master/screen.png)
 
 
