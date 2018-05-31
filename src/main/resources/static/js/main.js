@@ -10,6 +10,8 @@ function showAllUsers() {
               url: "http://localhost:8090/restAllUsers",
               }).then (function(data){
                  console.log(data);
+                 $('#saveUserPDFbyDep').attr('id', 'saveUserPDF');
+                 $('#saveUserPDF').attr('onclick','saveUserPDF()');
                  $('#table3 .UserDB').remove();
                  var objs = data;
                  for(var i= 0; i < objs.length; i++){
@@ -76,11 +78,11 @@ function applyUpdUser(){
               );
 }
 
-
 //Нажатие кнопки не обновлять юзера(крестик)
 function notApplyUpdUser(){
     showAllUsers();
 }
+
 //Генерирует таблицу со всеми Department
 function showAllDepartments() {
     $.ajax({
@@ -108,6 +110,7 @@ function showAllDepartments() {
          }
     );
 };
+
 //Удаляет User по id
 function del_by_id(user_id){
 var textId = $('#id_field_find_user').val();
@@ -120,6 +123,7 @@ var textId = $('#id_field_find_user').val();
                     }
                 );
     }
+
 //Удаляет Department по id
 function del_by_id_department(department_id){
 var textId = $('#id_field_department').val();
@@ -133,7 +137,6 @@ var textId = $('#id_field_department').val();
                     }
                 );
     }
-
 
 //Генерирует строку в таблице для обновлени департамент по id
 function upd_by_id_department(departmentId, depName, description, columnNumber){
@@ -151,6 +154,7 @@ function upd_by_id_department(departmentId, depName, description, columnNumber){
         "</tr>"
     );
 }
+
 //Нажатие кнопки обновить департамент(птичка)
 function applyUpdDep(){
     var did = $("td#depIdUpdate").text();
@@ -165,27 +169,52 @@ function applyUpdDep(){
                  }
           );
 }
+
 //Нажатие кнопки не обновлять департамент(крестик)
 function notApplyUpdDep(){
     showAllDepartments();
 }
 
+//Скачивает PDF отчет со всеми пользователями
 function saveUserPDF(){
     $.ajax({
-                      url: "http://localhost:8090/restAllUsers",
-                      }).then (function(data){
-                         var objs = data;
-                         var columns = ["ID", "First Name", "Last Name", "Middle Name", "Date", "Department ID"];
-                         var rows = [];
-                         for(var i= 0; i < objs.length; i++){
-                            rows[i] = [objs[i].id, objs[i].firstName, objs[i].lastName, objs[i].middleName, objs[i].date, objs[i].departmentId];
-                         }
-                         var doc = new jsPDF('p', 'pt');
-                         doc.autoTable(columns, rows);
-                         doc.save('user_table.pdf');
-                  }
-            );
+              url: "http://localhost:8090/restAllUsers",
+              }).then (function(data){
+                 var objs = data;
+                 var columns = ["ID", "First Name", "Last Name", "Middle Name", "Date", "Department ID"];
+                 var rows = [];
+                 for(var i= 0; i < objs.length; i++){
+                    rows[i] = [objs[i].id, objs[i].firstName, objs[i].lastName, objs[i].middleName, objs[i].date, objs[i].departmentId];
+                 }
+                 var doc = new jsPDF('p', 'pt');
+                 doc.autoTable(columns, rows);
+                 doc.save('user_table.pdf');
+          }
+    );
 }
+
+//Скачивает PDF отчет со всеми пользователями в указанном департаменте
+function saveUserByDepartmentPDF(){
+    var dep = $( "input[name='nameDep']" ).val();
+          $.ajax({
+              url: 'http://localhost:8090/find_by_department',
+              method: 'POST',
+              data: {nameDep: dep},
+              }).then (function(data){
+     var objs = data;
+     var columns = ["ID", "First Name", "Last Name", "Middle Name", "Date", "Department ID"];
+     var rows = [];
+     for(var i= 0; i < objs.length; i++){
+        rows[i] = [objs[i].id, objs[i].firstName, objs[i].lastName, objs[i].middleName, objs[i].date, objs[i].departmentId];
+     }
+     var doc = new jsPDF('p', 'pt');
+     doc.autoTable(columns, rows);
+     doc.save('user_table_by_dep.pdf');
+        }
+    );
+}
+
+//Скачивает PDF отчет со всеми департаментами
 function saveDepartmentPDF(){
     $.ajax({
                       url: "http://localhost:8090/restAllDepartments",
@@ -290,6 +319,8 @@ $(document).ready(function() {
                       method: 'POST',
                       data: {nameDep: dep},
                       }).then (function(data){
+                           $('#saveUserPDF').attr('id', 'saveUserPDFbyDep');
+                           $('#saveUserPDFbyDep').attr('onclick', 'saveUserByDepartmentPDF()');
                            $('#table3 .UserDB').remove();
                            var objs = data;
                            for(var i= 0; i < objs.length; i++){
@@ -317,9 +348,9 @@ $(document).ready(function() {
                });
 
     //Скачать PDF таблицу пользователей
-    $('#saveUserPDF').click(function () {
-        saveUserPDF();
-    });
+    //$('#saveUserPDF').click(function () {
+    //    saveUserPDF();
+   // });
 
 
 ///////////////////////////////////

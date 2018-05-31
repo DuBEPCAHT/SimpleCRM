@@ -254,7 +254,7 @@ button#find_all_department_rest, button#find_all_users_rest{
     padding-left: 30px;
 }
 
-button#saveUserPDF, button#saveDepartmentPDF {
+button#saveUserPDF, button#saveDepartmentPDF, button#saveUserPDFbyDep {
     background: url(https://icons8.com/iconizer/files/Plastic_XP_General_Icons/orig/diskette.png) 50% 50% no-repeat;
     background-size: contain;
     width: 25px;
