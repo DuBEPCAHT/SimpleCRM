@@ -49,7 +49,7 @@ function upd_by_id_user(uId, uFirstName, uLastName, uMiddleName, uDate, uDepartm
              "<td id='uLNameUpdate'>" + "<input type='text' name='lastName' value='" + uLastName + "'>" + "</td>" +
              "<td id='uMNameUpdate'>" + "<input type='text' name='middleName' value='" + uMiddleName + "'>" + "</td>" +
              "<td id='uDateUpdate'>" + "<input type='date' name='date' value='" + uDate + "'>" + "</td>" +
-             "<td id='uDepIdUpdate'>" + "<input type='number' name='departmentId' value='" + uDepartmentId + "'>" + "</td>" +
+             "<td id='uDepIdUpdate'>" + "<input type='number' name='departmentId' placeholder='id департамента'>" + "</td>" +
              "<td>" +
              "<div align='center'><button class='yesUpdateDep' type='button' title='Обновить пользователя' onclick='applyUpdUser()'/></div>" +
              "</td>" +

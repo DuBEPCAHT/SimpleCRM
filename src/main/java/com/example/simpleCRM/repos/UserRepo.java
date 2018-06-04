@@ -18,5 +18,4 @@ public interface UserRepo extends CrudRepository<UserEntity, Long>, JpaRepositor
     List<UserEntity> findByDepartment(@Param("nameDep") String nameDep);
 
     List<UserEntity> findByCodeDepartment(DepartmentEntity codeDepartment);
-
 }

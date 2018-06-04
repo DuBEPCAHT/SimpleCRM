@@ -17,11 +17,8 @@
    <body>
    <div align="right">
     <form action="logout" method="post">
-       <input type="submit" value="Sign Out"/>
+       <input class="signOutButton" type="submit" value="Sign Out"/>
      </form>
-     <form action="rest" method="get">
-                  <input type="submit" value="RESTfull Service"/>
-      </form>
    </div>
      <div class="main">
        <div class="mainUserBlock">

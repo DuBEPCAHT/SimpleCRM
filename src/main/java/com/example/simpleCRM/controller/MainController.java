@@ -31,16 +31,4 @@ public class MainController {
         return "redirect:/general";
     }
 
-    @GetMapping("rest")
-    public String restPage(){
-        return "rest";
-    }
-
-    @GetMapping("goToMain")
-    public String goToMainPage(){
-        return "main";
-    }
-
-
-
 }

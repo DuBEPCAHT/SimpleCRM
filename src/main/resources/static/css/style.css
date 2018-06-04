@@ -263,3 +263,7 @@ button#saveUserPDF, button#saveDepartmentPDF, button#saveUserPDFbyDep {
     padding-left: 30px;
     padding-bottom: 5px;
 }
+
+.signOutButton {
+    width: 25%;
+}
