@@ -54,7 +54,7 @@
                  <legend>Find User</legend>
                  <label>
                    User ID
-                 </span><input type="number" name="id" id="id_field_find_user" placeholder="id">
+                 </span><input type="number" name="id" id="id_field_find_user" placeholder="user id">
                </label>
              </fieldset>
              <fieldset class="account-action">
@@ -107,7 +107,7 @@
    <div class="form">
      <form>
        <fieldset class="account-info" id="dep3">
-         <legend class="dep1">Add department</legend>
+         <legend class="dep1">Add Department</legend>
          <label>
            Department name
            <input type="text" name="depName" placeholder="name">
