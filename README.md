@@ -21,6 +21,6 @@ Building system: Maven;
 
 ***
 
-![Image alt](https://github.com/DuBEPCAHT/SimpleCRM/blob/master/screen.png)
+![Image alt](https://github.com/DuBEPCAHT/SimpleCRM/blob/master/footer_lodyas.png)
 
 
