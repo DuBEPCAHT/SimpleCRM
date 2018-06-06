@@ -1,5 +1,5 @@
 # SimpleCRM
-***
+
 Application for managing users and departments. Realized REST service, CRUD, SSO (Google).
 The Postgre database is required to run.
 After starting the application go to the link - http://localhost:8090
